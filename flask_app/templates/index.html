@@ -8,53 +8,59 @@
     <title>Subscriptions</title>
 </head>
 <body>
-    <div class="d-flex justify-content-around">
-        <form action="/register" method="post" class="col-4 p-4 bg-dark text-light">
-            <h2 class="text-primary">Register</h2>
-            {% with messages = get_flashed_messages(category_filter=['register']) %}
-                {% if messages %}
-                <div class="alert alert-danger" role="alert">
-                    <strong>ERROR</strong>
-                        {% for message in messages %}
-                        <p>{{message}}</p>
-                        {% endfor %}
-                </div>
-                {% endif %}
-            {% endwith %}
-            <label for="first_name" class="py-2">First Name:</label>
-            <input type="text" name="first_name" class="form-control">
-            <label for="last_name" class="py-2">Last Name:</label>
-            <input type="text" name="last_name" class="form-control">
-            <label for="email" class="py-2">Email:</label>
-            <input type="text" name="email" class="form-control">
-            <label for="password" class="py-2">Password:</label>
-            <input type="password" name="password" class="form-control">
-            <label for="confirm" class="py-2">Confirm Password:</label>
-            <input type="password" name="confirm" class="form-control">
-            <p class="pt-3">
-                <input type="submit" value="Register" class="btn btn-primary">
-            </p>
-        </form>
-        <form action="/login" method="post" class="col-4 p-4 bg-dark text-light">
-            <h2 class="text-success">Login</h2>
-            {% with messages = get_flashed_messages(category_filter=['login']) %}
-                {% if messages %}
-                <div class="alert alert-danger" role="alert">
-                    <strong>ERROR</strong>
-                        {% for message in messages %}
-                        <p>{{message}}</p>
-                        {% endfor %}
-                </div>
-                {% endif %}
-            {% endwith %}
-            <label for="email" class="py-2">Email:</label>
-            <input type="text" name="email" class="form-control">
-            <label for="password" class="py-2">Password:</label>
-            <input type="password" name="password" class="form-control">
-            <p class="pt-3">
-                <input type="submit" value="Login" class="btn btn-success">
-            </p>
-        </form>
+    <div class="d-flex container-fluid">
+        <div class="row justify-content-md-around my-2 gy-3">
+            <div class="col col-sm-12 col-md-4">
+                <form action="/register" method="post" class="p-4 bg-dark text-light">
+                    <h2 class="text-primary">Register</h2>
+                    {% with messages = get_flashed_messages(category_filter=['register']) %}
+                        {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>ERROR</strong>
+                                {% for message in messages %}
+                                <p>{{message}}</p>
+                                {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
+                    <label for="first_name" class="py-2">First Name:</label>
+                    <input type="text" name="first_name" class="form-control">
+                    <label for="last_name" class="py-2">Last Name:</label>
+                    <input type="text" name="last_name" class="form-control">
+                    <label for="email" class="py-2">Email:</label>
+                    <input type="text" name="email" class="form-control">
+                    <label for="password" class="py-2">Password:</label>
+                    <input type="password" name="password" class="form-control">
+                    <label for="confirm" class="py-2">Confirm Password:</label>
+                    <input type="password" name="confirm" class="form-control">
+                    <p class="pt-3">
+                        <input type="submit" value="Register" class="btn btn-primary">
+                    </p>
+                </form>
+            </div>
+            <div class="col col-sm-12 col-md-4">
+                <form action="/login" method="post" class="p-4 bg-dark text-light">
+                    <h2 class="text-success">Login</h2>
+                    {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>ERROR</strong>
+                                {% for message in messages %}
+                                <p>{{message}}</p>
+                                {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
+                    <label for="email" class="py-2">Email:</label>
+                    <input type="text" name="email" class="form-control">
+                    <label for="password" class="py-2">Password:</label>
+                    <input type="password" name="password" class="form-control">
+                    <p class="pt-3">
+                        <input type="submit" value="Login" class="btn btn-success">
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
